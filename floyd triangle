@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class ReverseFloydTriangle {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter number of rows: ");
+        int n = sc.nextInt();
+        
+        int num = 1;
+
+        for (int i = 1; i <= n; i++) {
+            int[] row = new int[i];
+
+            // Fill the row with increasing numbers
+            for (int j = 0; j < i; j++) {
+                row[j] = num++;
+            }
+
+            // Print the row in reverse order
+            for (int j = i - 1; j >= 0; j--) {
+                System.out.print(row[j] + " ");
+            }
+
+            System.out.println(); // Move to next line
+        }
+
+        sc.close();
+    }
+}
